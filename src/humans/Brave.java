@@ -14,12 +14,12 @@ public class Brave extends Human {
 	
 	@Override
 	public String getName() {
-		String name = getName();
+		String name = super.getName();
 		return name;
 	}
 
 	public String getWeapon() {
-		String weapon = getWeapon();
+		String weapon = super.getWeapon();
 		return weapon;
 
 	}
