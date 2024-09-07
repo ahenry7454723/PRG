@@ -15,19 +15,18 @@ public abstract class Human extends Living {
     @Override
     public void attack(Living target) {
         // 1から10までのサイコロを振り、自分の攻撃力とかけ合わせた値を相手に与えるダメージとする
-        int random = Dice.get(1, 10);
-        int attackPower = getOffensive() * random;
-
+        int diceRoll = Dice.get(1, 10);
+        // サイコロの結果に攻撃力を乗算してダメージを計算
+        int damage = this.offensive * diceRoll;
         // 相手のHPをダメージ値だけ減らす
-        int targetResidualHp = target.getHp() - attackPower;
-        target.setHp(targetResidualHp);
+        target.setHp(target.getHp() - damage); 
 
         // 自分の攻撃力を1だけ減らす
-        setOffensive(getOffensive() - 1);
+        this.offensive -= 1; // 攻撃後、攻撃力を1だけ減らす
 
         // コンソールにステータスを表示
         System.out.println(getName() + "が" + getWeapon() + "で攻撃！");
-        System.out.println(target.getName() + "に" + attackPower + "のダメージを与えた！");
+        System.out.println(target.getName() + "に" + damage + "のダメージを与えた！");
         System.out.println(target.getName() + "の残りHPは" + target.getHp() + "だ。");
         System.out.println(getName() + "の攻撃力は" + getOffensive() + "になった。");
     }
