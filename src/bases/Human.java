@@ -27,7 +27,5 @@ public abstract class Human extends Living {
         // コンソールにステータスを表示
         System.out.println(getName() + "が" + getWeapon() + "で攻撃！");
         System.out.println(target.getName() + "に" + damage + "のダメージを与えた！");
-        System.out.println(target.getName() + "の残りHPは" + target.getHp() + "だ。");
-        System.out.println(getName() + "の攻撃力は" + getOffensive() + "になった。");
     }
 }
