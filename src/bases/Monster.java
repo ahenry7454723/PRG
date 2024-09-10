@@ -23,7 +23,6 @@ public abstract class Monster extends Living {
         target.setHp(targetResidualHp);
 
         // コンソールにステータスを表示
-        System.out.println("｢"+getName() + "｣が｢" + getWeapon() + "｣で攻撃！");
-        System.out.println("｢"+target.getName() + "｣に" + attackPower + "のダメージを与えた｡");
+        System.out.println("｢"+getName() + "｣が｢" + getWeapon() + "｣で攻撃！｢"+target.getName() +"｣に" + attackPower + "のダメージを与えた｡");
     }
 }
